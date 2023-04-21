@@ -7,7 +7,7 @@ networks:
 
 services:
   jira:
-    build: ./Dockerfile
+    build: ./
     container_name: jira
     restart: always
     privileged: true
