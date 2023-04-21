@@ -1,0 +1,18 @@
+version: '3.3'
+networks:
+  default:
+    external: true
+    name: default_network
+
+
+services:
+  jira:
+    build: ./Dockerfile
+    container_name: jira
+    restart: always
+    privileged: true
+    volumes:
+      - ./data/jira:/var/atlassian/application-data/jira
+      - /etc/localtime:/etc/localtime:ro
+    ports:
+      - 8080:8080
